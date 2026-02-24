@@ -330,7 +330,7 @@ export default function TopicPage() {
                     className="absolute inset-0"
                     style={{
                         background:
-                            "linear-gradient(to top, rgba(20,8,0,0.85) 0%, rgba(20,8,0,0.4) 40%, transparent 100%)",
+                            "linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 40%, transparent 100%)",
                     }}
                 />
 
@@ -420,7 +420,7 @@ export default function TopicPage() {
                                 background:
                                     "linear-gradient(135deg, #3B82F6, #2563EB)",
                                 boxShadow:
-                                    "0 3px 12px rgba(255, 140, 0, 0.3)",
+                                    "0 3px 12px rgba(37, 99, 235, 0.22)",
                             }}
                         >
                             {loading && activeOption === "script"
@@ -500,7 +500,7 @@ export default function TopicPage() {
                                 background:
                                     "linear-gradient(135deg, #60A5FA, #2563EB)",
                                 boxShadow:
-                                    "0 3px 12px rgba(255, 140, 0, 0.3)",
+                                    "0 3px 12px rgba(37, 99, 235, 0.22)",
                             }}
                         >
                             {loading && activeOption === "blog"
