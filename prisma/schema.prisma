@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          String       @id @default(uuid())
+  name        String
+  email       String       @unique
+  password    String
+  createdAt   DateTime     @default(now())
+  generations Generation[]
+}
+
+model Topic {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  imageUrl    String?
+  traffic     String?
+  source      String?
+  createdAt   DateTime @default(now())
+
+  generations Generation[]
+}
+
+model Generation {
+  id        String         @id @default(cuid())
+  type      GenerationType
+  content   String?        @db.Text
+  imageData String?        @db.Text
+  imageMime String?
+  topicId   String
+  topic     Topic          @relation(fields: [topicId], references: [id])
+  userId    String
+  user      User           @relation(fields: [userId], references: [id])
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+enum GenerationType {
+  SCRIPT
+  IMAGE
+  BLOG
+}
